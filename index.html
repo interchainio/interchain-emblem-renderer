@@ -2,38 +2,51 @@
 <html>
   <head>
     <title>Interchain Foundation Emblem Renderer</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
     <section>
       <div class="svg-container">
         <script src="render.js" data-size="120"></script>
         <p class="p-t">
-          <label class="p-r">Yaw</label><input type="number" id="inputYaw" value="0" class="t-mono">
-          <label class="p-r">Roll</label><input type="number" id="inputRoll" value="0" class="t-mono">
+          <label class="p-r">Yaw</label
+          ><input type="number" id="inputYaw" value="0" class="t-mono" />
+          <label class="p-r">Roll</label
+          ><input type="number" id="inputRoll" value="0" class="t-mono" />
           (deg)
         </p>
       </div>
       <div class="p-l2">
         <h1>Interchain Foundation Emblem Renderer v1</h1>
-        
-        <p>1. Click image to download as SVG. Please make sure to "Outline Stroke" in apps such as Illustrator to preserve the stroke weight upon scaling.</p>
-        <p>2. For placement of animated emblem on a webpage, put below code where it needs to be shown. For various display options, see documentation on <a href="https://github.com/math-practice/interchain-emblem-renderer/">GitHub</a>.</p>
-        <xmp><script src="https://math-practice.github.io/interchain-emblem-renderer/render.js" data-animate data-size="300"></script></xmp>
+
+        <p>
+          1. Click image to download as SVG. Please make sure to "Outline
+          Stroke" in apps such as Illustrator to preserve the stroke weight upon
+          scaling.
+        </p>
+        <p>
+          2. For placement of animated emblem on a webpage, put below code where
+          it needs to be shown. For various display options, see documentation
+          on
+          <a href="https://github.com/interchainio/interchain-emblem-renderer"
+            >GitHub</a
+          >.
+        </p>
+        <xmp><script src="https://interchainio.github.io/interchain-emblem-renderer/render.js" data-animate data-size="300"></script></xmp>
       </div>
     </section>
     <script>
-      var inputs = document.querySelectorAll('input')
+      var inputs = document.querySelectorAll("input");
       for (let i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener('input', (event) => {
-          yaw = document.querySelector('#inputYaw').value;
-          roll = document.querySelector('#inputRoll').value;
+        inputs[i].addEventListener("input", (event) => {
+          yaw = document.querySelector("#inputYaw").value;
+          roll = document.querySelector("#inputRoll").value;
           drawPaths();
         });
       }
 
       var emblemSvg = document.querySelector(".svg-container svg");
-      emblemSvg.addEventListener("click", function(){ 
+      emblemSvg.addEventListener("click", function () {
         var html = this.outerHTML;
         var blob = new Blob([html.toString()]);
         var element = document.createElement("a");
@@ -42,6 +55,7 @@
         element.click();
         element.remove();
       });
-    </script>>
+    </script>
+    >
   </body>
 </html>
